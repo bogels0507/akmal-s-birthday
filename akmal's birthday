@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Akmal 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      height: 80%;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .slide {
+      display: none;
+      animation: fade 0.5s ease-in-out;
+    }
+    .slide.active {
+      display: block;
+    }
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      padding: 10px 20px;
+      background: #ee5a5a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #d94b4b;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 18px;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slide active">
+      <h2>🎉 Happy Birthday, Akmal!</h2>
+      <p>Hari ini dunia terasa lebih cerah karena kamu lahir di tanggal yang indah ini.</p>
+    </div>
+    <div class="slide">
+      <h2>🎂 Kue, Doa, dan Harapan</h2>
+      <p>Semoga hidupmu selalu manis seperti kue ulang tahun dan doamu terkabul satu per satu.</p>
+    </div>
+    <div class="slide">
+      <h2>💫 Terima Kasih, Akmal</h2>
+      <p>Karena sudah jadi orang yang hebat, ceria, dan penuh semangat. Tetap jadi Akmal yang luar biasa!</p>
+    </div>
+    <div class="slide">
+      <h2>🌈 Penutup</h2>
+      <p>Semoga semua langkahmu ke depan penuh warna dan kebahagiaan. Nikmati harimu, ini harimu! 🎁</p>
+    </div>
+    <div class="controls">
+      <button onclick="prevSlide()">Sebelumnya</button>
+      <button onclick="nextSlide()">Berikutnya</button>
+    </div>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>
