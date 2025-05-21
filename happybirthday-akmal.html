@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun Akmal 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      width: 90%;
+      max-width: 800px;
+      height: 90vh;
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 30px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    .card h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 60px;
+      color: #ff6f91;
+      margin: 0 0 10px;
+    }
+    .card p {
+      font-size: 18px;
+      color: #555;
+      margin: 0 0 20px;
+    }
+    .card img {
+      width: auto;
+      max-width: 90%;
+      max-height: 300px;
+      border-radius: 20px;
+      margin: 20px auto;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .controls {
+      margin-top: auto;
+      display: flex;
+      gap: 20px;
+    }
+    .controls button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background: #ff6f91;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .controls button:hover {
+      background: #ff4d6d;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.8s ease;
+    }
+    .slide.active {
+      display: flex;
+    }
+    audio {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="happy.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <div class="slide active">
+      <h1>Happy Birthday Akmal 🎂</h1>
+      <p>Hari ini adalah hari spesial untuk seseorang yang luar biasa!</p>
+      <img src="akmal1.jpg" alt="Foto Akmal 1">
+    </div>
+    <div class="slide">
+      <h1>Semoga Bahagia 🌟</h1>
+      <p>Semoga Akmal diberi umur panjang, kesehatan, dan kebahagiaan selalu.</p>
+      <img src="akmal2.jpg" alt="Foto Akmal 2">
+    </div>
+    <div class="slide">
+      <h1>Terima Kasih 💖</h1>
+      <p>Karena sudah jadi inspirasi buat banyak orang. Kamu luar biasa!</p>
+      <img src="akmal3.jpg" alt="Foto Akmal 3">
+    </div>
+    <div class="slide">
+      <h1>🎁 Hari Spesialmu!</h1>
+      <p>Rayakan harimu dengan senyum, cinta, dan tawa. Happy birthday!</p>
+      <img src="akmal4.jpg" alt="Foto Akmal 4">
+    </div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">Sebelumnya</button>
+      <button onclick="nextSlide()">Berikutnya</button>
+    </div>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>
