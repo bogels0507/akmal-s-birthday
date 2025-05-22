@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Barakallah fii umrik, Akmal(˶ᵔ ᵕ ᵔ˶)!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(#ffecf0, #ffe3f3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      width: 90%;
+      max-width: 600px;
+      height: 80%;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      overflow: hidden;
+      position: relative;
+    }
+    .slide {
+      display: none;
+      padding: 30px;
+      text-align: center;
+    }
+    .slide.active {
+      display: block;
+    }
+    .controls {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      padding: 10px 20px;
+      background: #ff6b81;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slide active">
+      <h2>Barakallah fii umrik, Akmal(˶ᵔ ᵕ ᵔ˶)!</h2>
+      <p>Bt mo memanjatkan doa, jangan lupa mengaminkan yah 🤏🏻.</p>
+    </div>
+    <div class="slide">
+      <h2>•ᴗ• Allah izinkan se selalu berada di tengah lingkungan baik</h2>
+      <p>yang di dalamnya bernaung orang-orang baik, serta didatangkan segala hal-hal baik. (๑ᵔ⤙ᵔ๑) ִֶָ𓂃 ࣪˖ ִֶָ🐇་༘࿐ Walaupun gendut u have to love ur self lebih banyak pada tiap-tiap hari. Jalan-jalan yang se temui ke depan adalah jalan-jalan yang mulus dan lancar. </p>
+    </div>
+    <div class="slide">
+      <h2>Allah izinkan bahagia melekat padamu◝(ᵔᗜᵔ)◜</h2>
+      <p>>⩊< Segala ingin yang tidak kunjung memunculkan eksistensinya Allah mudahkan segera muncul.</p>
+    </div>
+    <div class="slide">
+      <h2>૮₍´˶• . • ⑅ ₎ა Hmm... terima kasih karena telah berdiri (walau sering koprol-koprol juga wkwk) </h2>
+      <p>meski setahun belakangan penuh dengan hari-hari yang tidak mudah dengan segala pikiran buruk yang berisik di kepala(っ- ‸ - ς). Selamat merayakan kecemasan-cemasan di tangga berikutnya, selamat berperang dengan pertanyaan "kapan" yang tidak ada ujungnya wkwk 🤸🏻‍♀️ Selamat bertambah usia, Akmal ✧｡٩(ˊᗜˋ )و✧*｡. Segala kekhawatiran dan kecemasan akan masa depan Allah segera redakan. Gimana? Udah diaminin belum? 💃🏻</p>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">Sebelumnya</button>
+      <button onclick="nextSlide()">Berikutnya</button>
+    </div>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>
